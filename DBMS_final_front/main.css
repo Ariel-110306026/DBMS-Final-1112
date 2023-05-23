@@ -1,0 +1,141 @@
+@media screen and (max-width: 479px){
+	.heading{
+		margin-bottom: 20px;
+		font-size: 30px;
+		text-align: center;
+	}
+
+	.container{
+		margin-top: 3px;
+		padding-top: 10px;
+		padding-bottom: 0px;
+		background-color: #b3ead0;
+	}
+
+	.body{
+		display: block;
+		background-color: #d2ece0;
+	}
+
+	.button{
+		margin-right: 0px;
+		padding: 22px 164px 29px 90px;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.container-2{
+		margin-top: 8px;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		background-color: #b2dcc9;
+	}
+
+	.image{
+		padding-right: 10px;
+	}
+
+	.button-2{
+		padding: 20px 110px 28px 50px;
+		background-color: #b2dcc9;
+		color: #111;
+		font-weight: 700;
+	}
+
+	.container-3{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #b2dcc9;
+	}
+
+	.container-4{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #b2dcc9;
+	}
+
+	.image-2{
+		margin-bottom: 6px;
+		margin-left: 20px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.container-5{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #b2dcc9;
+	}
+
+	.container-6{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #b2dcc9;
+	}
+
+	.container-7{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		background-color: #b2dcc9;
+	}
+
+	.image-3{
+		margin-left: 10px;
+		padding: 5px 0px 10px 10px;		
+	}
+
+	.image-4{
+		margin-top: 8px;
+		margin-bottom: 10px;
+		margin-left: 15px;
+		padding: 10px;
+	}
+
+	.image-5{
+		margin-left: 10px;
+		padding-left: 10px;
+	}
+
+	.image-6{
+		margin-top: 6px;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		padding-left: 10px;
+	}
+
+	.button-3{
+		padding: 20px 100px 20px 60px;
+		background-color: #b2dcc9;
+		color: #111;
+	}
+
+	.button-4{
+		padding: 20px 120px 20px 60px;
+		background-color: #b2dcc9;
+		color: #111;
+	}
+
+	.button-5{
+		padding: 20px 110px 20px 60px;
+		background-color: #b2dcc9;
+		color: #111;
+	}
+
+	.button-6{
+		padding: 20px 110px 20px 60px;
+		background-color: #b2dcc9;
+		color: #111;
+	}
+
+	.button-7{
+		padding: 23px 130px 60px;
+		background-color: #b2dcc9;
+		color: #111;
+	}
+
+}
