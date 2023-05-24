@@ -14,9 +14,15 @@
 	</div>
 
 		<div class="container-5 ">
-		<button class="button-5">
+		<button class="button-5" onclick="changepage()">
 		<img src ="shelf.png" loading ="lazy" width="76" alt = "" class="image-6"><strong>貨架模擬</strong>
-	</button></div>
+	</button>
+	<script>
+		function changepage(){
+			window.location.href ="firstscene.html"
+		}
+	</script>
+	</div>
 
 	<div class="container-5">
 		<button class="button-5">
@@ -25,15 +31,26 @@
 	</div>
 
 	<div class="container-5">
-		<button class="button-5">
+		<button class="button-5" onclick="practice()" >
 		<img src="books.png" loading="lazy" width ="76"  size ="(max-width:470px)100vw,75px" srcset="books-p-500.png 500w,books.png 512w" alt="" class="image-3">
 	<strong>題庫練習</strong></button>
+	<script>
+		function practice(){
+			alert("尚待開發中~")
+		}
+
+	</script>
 	</div>
 
-	<div class="container-5">
+	<div class="container-5" onclick="contact()">
 		<button class="button-5">
 		<img src="telephone.png"  loading="lazy" width="72" size="(max-width:470px)100vw,70px" srcset="telephone-p-500.png 500w,telephone.png 512w" alt="" class="image-4">
 		<strong>聯絡負責人</strong></button>
+		<script>
+			function contact(){
+				alert("尚待開發中~")
+			}
+		</script>
 	</div>
 
 	<div class="container-5">
