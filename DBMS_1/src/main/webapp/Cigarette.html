@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #div1 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        #div2 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        #div3 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        #div4 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        </style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">pic1</div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">POS</div>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<img id="drag1" src="pic1.jpeg" draggable="true" ondragstart="drag(event)" width="auto" height="69">
+<br>
+<img id="drag2" src="POS.jpg" draggable="true" ondragstart="drag(event)" width="auto" height="69">
+<br>
+<img id="drag3" src="racks.jpg" draggable="true" ondragstart="drag(event)" width="auto" height="69">
+<br>
+<img id="drag4" src="seats.jpg" draggable="true" ondragstart="drag(event)" width="auto" height="69">
+<br>
+
+</body>
+</html>
