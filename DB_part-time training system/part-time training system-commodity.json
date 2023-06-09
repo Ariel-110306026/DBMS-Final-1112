@@ -1,0 +1,92 @@
+[
+	{
+		"commodity_id" : 1,
+		"commodity_name" : "雲絲頓藍20支",
+		"appearance" : " ",
+		"common_name" : "藍雲"
+	},
+	{
+		"commodity_id" : 2,
+		"commodity_name" : "日本肯特長支6號",
+		"appearance" : " ",
+		"common_name" : "肯特6號"
+	},
+	{
+		"commodity_id" : 3,
+		"commodity_name" : "萬寶路金20支硬盒",
+		"appearance" : " ",
+		"common_name" : "白媽寶,金媽"
+	},
+	{
+		"commodity_id" : 4,
+		"commodity_name" : "萬寶路金軟包20支軟盒",
+		"appearance" : " ",
+		"common_name" : "白媽軟,媽波賴"
+	},
+	{
+		"commodity_id" : 5,
+		"commodity_name" : "鴻運精裁6號",
+		"appearance" : " ",
+		"common_name" : "藍色LS"
+	},
+	{
+		"commodity_id" : 6,
+		"commodity_name" : "馬爾斯長支5毫克",
+		"appearance" : " ",
+		"common_name" : "Mars5號"
+	},
+	{
+		"commodity_id" : 7,
+		"commodity_name" : "雲絲頓天香5毫克20支",
+		"appearance" : " ",
+		"common_name" : "天香"
+	},
+	{
+		"commodity_id" : 8,
+		"commodity_name" : "維斯塔5毫克",
+		"appearance" : " ",
+		"common_name" : "VESTA5號"
+	},
+	{
+		"commodity_id" : 9,
+		"commodity_name" : "七星風藍硬盒20支",
+		"appearance" : " ",
+		"common_name" : "七星超淡,七星風藍"
+	},
+	{
+		"commodity_id" : 10,
+		"commodity_name" : "七星LSS清藍3毫克20支",
+		"appearance" : " ",
+		"common_name" : "LSS"
+	},
+	{
+		"commodity_id" : 11,
+		"commodity_name" : "馬爾斯長支2毫克菸",
+		"appearance" : " ",
+		"common_name" : "Mars2號"
+	},
+	{
+		"commodity_id" : 12,
+		"commodity_name" : "長壽尊爵2毫克",
+		"appearance" : " ",
+		"common_name" : "尊爵2號"
+	},
+	{
+		"commodity_id" : 13,
+		"commodity_name" : "金登喜路4mg",
+		"appearance" : " ",
+		"common_name" : "金當"
+	},
+	{
+		"commodity_id" : 14,
+		"commodity_name" : "藍色長支寶馬PALLMALL7mg",
+		"appearance" : " ",
+		"common_name" : "藍寶馬"
+	},
+	{
+		"commodity_id" : 15,
+		"commodity_name" : "大衛杜夫香菸紅",
+		"appearance" : " ",
+		"common_name" : "紅大衛"
+	}
+]

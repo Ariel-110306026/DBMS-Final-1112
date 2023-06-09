@@ -1,0 +1,15 @@
+
+insert into register value(1,1,FALSE,Null);
+insert into register value(1,2,FALSE,Null);
+insert into register value(1,3,FALSE,Null);
+insert into register value(1,4,FALSE,Null);
+insert into register value(2,1,FALSE,Null);
+insert into register value(3,1,FALSE,Null);
+insert into register value(6,1,FALSE,Null);
+insert into register value(7,1,FALSE,Null);
+insert into register value(2,2,FALSE,Null);
+insert into register value(3,2,TRUE,1);
+insert into register value(3,3,TRUE,1);
+insert into register value(3,4,TRUE,1);
+insert into register value(5,4,TRUE,1);
+insert into register value(5,3,TRUE,1);
