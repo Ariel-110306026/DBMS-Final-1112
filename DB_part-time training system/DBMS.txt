@@ -1,15 +1,86 @@
+CREATE DATABASE `part-time training system`;
+USE `part-time training system`;
+CREATE TABLE `user`(
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+experience VARCHAR(20),
+grade VARCHAR(20),
+hourly_wage INT
+);
+CREATE TABLE `duty_time`(
+duty_time_id INT PRIMARY KEY AUTO_INCREMENT,
+duty_date DATE,
+start_time TIME,
+end_time TIME,
+full_time_job_employees_num INT,
+part_time_job_employees_num INT,
+fill_in_time_limit DATETIME
+);
+CREATE TABLE `register`(
+registrant_id INT NOT NULL,
+duty_time_id INT NOT NULL,
+verdict BOOLEAN,
+verdict_person_id INT,
+PRIMARY KEY(registrant_id, duty_time_id),
+CONSTRAINT register_FK1 FOREIGN KEY(registrant_id) REFERENCES `user`(user_id),
+CONSTRAINT register_FK2 FOREIGN KEY(duty_time_id) REFERENCES `duty_time`(duty_time_id),
+CONSTRAINT register_FK3 FOREIGN KEY(verdict_person_id) REFERENCES `user`(user_id)
+);
+CREATE TABLE `shelf`(
+shelf_id INT PRIMARY KEY AUTO_INCREMENT,
+capacity INT
+);
+CREATE TABLE `cabinet`(
+cabinet_id INT PRIMARY KEY AUTO_INCREMENT,
+shelf_id INT,
+position INT,
+CONSTRAINT cabinet_FK1 FOREIGN KEY(shelf_id) REFERENCES `shelf`(shelf_id)
+);
 
-insert into register value(1,1,FALSE,Null);
-insert into register value(1,2,FALSE,Null);
-insert into register value(1,3,FALSE,Null);
-insert into register value(1,4,FALSE,Null);
-insert into register value(2,1,FALSE,Null);
-insert into register value(3,1,FALSE,Null);
-insert into register value(6,1,FALSE,Null);
-insert into register value(7,1,FALSE,Null);
-insert into register value(2,2,FALSE,Null);
-insert into register value(3,2,TRUE,1);
-insert into register value(3,3,TRUE,1);
-insert into register value(3,4,TRUE,1);
-insert into register value(5,4,TRUE,1);
-insert into register value(5,3,TRUE,1);
+CREATE TABLE `commodity`(
+commodity_id INT PRIMARY KEY AUTO_INCREMENT,
+commodity_name VARCHAR(20),
+appearance VARCHAR(40),
+common_name VARCHAR(40)
+);
+CREATE TABLE `place`(
+cabinet_id INT,
+registrant_id INT,
+commodity_id INT,
+place_time DATETIME,
+CONSTRAINT place_PK PRIMARY KEY(cabinet_id, commodity_id, place_time),
+CONSTRAINT place_FK1 FOREIGN KEY(cabinet_id) REFERENCES `cabinet`(cabinet_id),
+CONSTRAINT place_FK2 FOREIGN KEY(registrant_id) REFERENCES `register`(registrant_id),
+CONSTRAINT place_FK3 FOREIGN KEY(commodity_id) REFERENCES `commodity`(commodity_id)
+);
+CREATE TABLE `question`(
+question_id INT PRIMARY KEY AUTO_INCREMENT,
+content VARCHAR(255),
+answer INT,
+question_type VARCHAR(20),
+shift VARCHAR(20),
+designer_id INT,
+CONSTRAINT question_FK1 FOREIGN KEY(designer_id) REFERENCES `user`(user_id)
+);
+CREATE TABLE `answer`(
+question_id INT,
+user_id INT,
+correct BOOLEAN,
+answer_time DATETIME,
+CONSTRAINT answer_PK PRIMARY KEY(question_id, user_id, answer_time),
+CONSTRAINT answer_FK1 FOREIGN KEY(question_id) REFERENCES `question`(question_id),
+CONSTRAINT answer_FK2 FOREIGN KEY(user_id) REFERENCES `user`(user_id)
+);
+CREATE TABLE `edit`(
+question_id INT,
+editor_id INT,
+previous_content VARCHAR(255),
+previous_answer INT,
+edit_time DATETIME,
+CONSTRAINT edit_PK PRIMARY KEY(question_id, editor_id, edit_time),
+CONSTRAINT edit_FK1 FOREIGN KEY(question_id) REFERENCES `question`(question_id),
+CONSTRAINT edit_FK2 FOREIGN KEY(editor_id) REFERENCES `user`(user_id)
+);
+
+
+
+
