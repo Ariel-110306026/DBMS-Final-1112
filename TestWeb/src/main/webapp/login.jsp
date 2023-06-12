@@ -6,7 +6,8 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.servlet.*" %>
 <%@ page import="javax.servlet.http.*" %>
-
+<%@ page import="work.Intergrate"%>
+<%@ page import="work.Connect"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,22 +20,26 @@
 	<div class="container">
 	<h1>工讀生培訓APP</h1>
 </div>
-<div class="container-1" id ="cont1">
+<div class="container-1">
 	<h3>Welcome</h3>
 	
+	<form action="intergrate" method="get">
 	<label>使用者帳號:</label>
-	<input id="userid" placeholder="Type " type="number">
+	<input id="userid"  name ="uid" placeholder="Type " type="text">
 	<br>
 	<!-- <label>使用者密碼:</label>-->
 	<!-- <input id="passwords" type="text" placeholder="Type">-->
 	<br><br>
 	<button class="button" id ="login" onclick="getInputValue();">login</button>
 	
+
 	<script>
-	
+		String value = "0"	
 		function getInputValue(){
 			var value1 = document.getElementById("userid").value;
+			/*let value2 =document.getElementById("passwords").value;*/
 			document.getElementById("login").addEventListener("click",redirectFunction());
+			value = value1;
 			function redirectFunction(){
 				
 				if(value1>0 && value1<15){
@@ -53,6 +58,7 @@
 			}
 		
 </script>
+</form>
 </div>
 
 </body>

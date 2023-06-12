@@ -1,21 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.io.IOException"%>
-<%@page import="work.*"%>
-<%@page import="java.sql.SQLException"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="javax.servlet.*" %>
-<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Manager Page</title>
-    <link rel="stylesheet" href="css\manager_page.css">
+<meta charset="UTF-8">
+<title>Manager Page</title>
+<link rel="stylesheet" href="manager_page.css">
 </head>
-
 <body>
-    <img src="img\manager_page.png" alt="manager" width="100" height="100">
+<img src="manager_page.png" alt="manager" width="100" height="100">
     <h1>排班表</h1>
     <button class="button1" onclick="window.location.href='manager_build.jsp'">建立班表</button>
     <button class="button2" onclick="window.location.href='manager_check.jsp'">定案排班時間</button>

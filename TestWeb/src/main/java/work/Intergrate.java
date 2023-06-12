@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,10 +44,11 @@ public class Intergrate extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
-		if(request.getParameter("userid")!= null) {
-			String id = request.getParameter("userid");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+		if(request.getParameter("uid")!= null) {
+			String id = request.getParameter("uid");
 			uid = Integer.parseInt(id);
-			request.getRequestDispatcher("login.jsp").forward(request, response);
 			try {
 				String status;
 				status=check(uid);
@@ -57,12 +57,7 @@ public class Intergrate extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-		
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("login.jsp").forward(request, response);
-		System.out.print(request.getParameter("duty_time"));
+		}		
 		init();
 	}
 
@@ -78,32 +73,82 @@ public class Intergrate extends HttpServlet {
 	
    public void init() throws ServletException {
 
+		Connection connect;
+		Statement stat ;
+//	public Connect() {
+		String server = "jdbc:mysql://my-database-1.ck5d9adueifx.ap-southeast-2.rds.amazonaws.com/";
+		String database = "part-time training system";
+		String url = server + database;
+		String username = "admin";
+		String password = "LN6MVu8Jr38vmyylUBD0";
+		//Connection connect;
+		
+    
         try {
-        	String connectionURL = "jdbc:mysql://my-database-1.ck5d9adueifx.ap-southeast-2.rds.amazonaws.com/part-time training system"; 
- 	       Connection connection=null;
- 	       
- 	      Class.forName("com.mysql.jdbc.util.Driver"); 
- 	      connection = DriverManager.getConnection(connectionURL, "admin", "LN6MVu8Jr38vmyylUBD0");
- 	      if(!connection.isClosed()) {
- 	    	 System.out.println("Connected to the database!");
- 	    	 conn=connection;
- 	    	 stat=conn.createStatement();
- 	    	 
- 	    	 String query;
- 	    	 query ="SELECT * FROM user;";
- 	    	 boolean success;
- 	    	 success  = stat.execute(query);
- 	    	 if(success) {
- 	    		 ResultSet result = stat.getResultSet();
- 	    		 showResultSet(result);
- 	    		 result.close();
- 	    	 }
- 	      }
- 	     
-        } catch (SQLException e) {
+            // Create a connection object
+        	Class.forName("com.mysql.jdbc.Driver");
+            connect= DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database!");
+            stat = connect.createStatement();
+            try {
+            	
+				conn=connect;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//boolean suc = false;
+				String query1,query2;
+//				query1 = "SELECT * FROM duty_time;";
+				query1 = "SELECT user_id FROM user;";
+				query2 = "SELECT grade FROM user;";
+				boolean success;
+				success =stat.execute(query1);
+				boolean exist;
+				String [][] re;
+				int index = 0;
+				if(success) {
+					ResultSet result = stat.getResultSet();
+					ArrayList<String>c=showResultSet(result);
+					re = new String [c.size()][2];
+					int i =1;
+					for(int j =0;j<c.size();j++) {
+						re[j][1]=c.get(j);
+					}
+					if(c.contains(Integer.toString(i))) {
+						exist = true;
+						index= c.indexOf(i);
+					}else {
+						exist=false;
+					}
+					result.close();
+				}
+				
+				boolean success2;
+				success2 =stat.execute(query2);
+				String p = "full-time";
+				boolean isfull;
+				if(exist=true) {
+					if(success2) {
+					ResultSet result = stat.getResultSet();
+					ArrayList<String>c=showResultSet(result);
+					if(c.get(index).equals("full-time")) {
+						isfull = true;
+						System.out.println("full-time");
+//						place = "f";
+					}else {
+						isfull=false;
+						System.out.println("part-time");
+//						place = "p";
+					}
+					result.close();
+					}
+				}
+        } catch (SQLException | ClassNotFoundException e) {
             // Handle the connection error
             System.out.println("Connection failed! Error: " + e.getMessage());
-        } 
+        
+        }
     }
    public String check(int uid) throws ServletException, SQLException {
 	   String place="a";

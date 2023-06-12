@@ -30,9 +30,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>mysql-connector-java-5.1.49</name>
+			<name>src/com</name>
 			<type>2</type>
-			<location>C:/Users/sunyu/eclipse-workspace/mysql-connector-java-5.1.49</location>
+			<location>C:/Users/sunyu/eclipse-workspace/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49/src/com</location>
 		</link>
 		<link>
 			<name>src/main/webapp/css</name>
